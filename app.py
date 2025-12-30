@@ -3,7 +3,7 @@ from semantic_net import SemanticNet
 from project_manager import ProjectManager
 
 VERSION = "0.2"
-app = Flask(__name__, template_folder="templates", static_folder="static", static_url_path="/static", port=5000, host="0.0.0.0")
+app = Flask(__name__, template_folder="templates", static_folder="static", static_url_path="/static")
 
 PROJECTS_DIR = "./projects"
 pm = ProjectManager(PROJECTS_DIR)
