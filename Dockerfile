@@ -18,4 +18,4 @@ ENV FLASK_APP=app.py
 
 # The command to run your app
 # "0.0.0.0" is MANDATORY. It tells Flask to accept connections from outside the container.
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["python", "-m", "flask", "run"]

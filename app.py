@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template, send_from_directory
 from semantic_net import SemanticNet
 from project_manager import ProjectManager
+import os
 
 VERSION = "0.2"
 app = Flask(__name__, template_folder="templates", static_folder="static", static_url_path="/static")
@@ -120,5 +121,5 @@ def check_inference():
     return jsonify({"count": count})
 
 if __name__ == "__main__":
-    app.run(port=4300, debug=True)
-
+    port = int(os.environ.get("FLASK_RUN_PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
